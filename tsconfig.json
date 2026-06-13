@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "app/page.jsx"
-  ],
+, "components/3d-card-demo.jsx", "components/ui/3d-card.tsx"  ],
   "exclude": ["node_modules"]
 }
