@@ -49,7 +49,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
   return (
     <div
       ref={loaderRef}
-      className="fixed inset-0 z-[9999] flex flex-col justify-between bg-[#1c1c1c] p-10 text-[#eae9e4] select-none pointer-events-auto"
+      className="fixed inset-0 z-9999 flex flex-col justify-between bg-[#1c1c1c] p-10 text-[#eae9e4] select-none pointer-events-auto"
     >
       {/* টপ সেকশন: কোম্পানির নাম বা ব্র্যান্ডিং */}
       <div className="flex justify-between items-center overflow-hidden">
@@ -72,7 +72,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
       </div>
 
       {/* বটম সেকশন: প্রোগ্রেস বার লাইনিং */}
-      <div className="w-full h-[2px] bg-white/10 relative overflow-hidden">
+      <div className="w-full h-0.5 bg-white/10 relative overflow-hidden">
         <div
           ref={progressBgRef}
           className="absolute top-0 left-0 h-full w-0 bg-[#eae9e4]"

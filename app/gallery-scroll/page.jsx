@@ -9,15 +9,13 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
-  const mainSec = useRef({ current: null });
-  const leftCol = useRef({ current: null });
-  const rightCol = useRef({ current: null });
+  const mainSec = useRef(null);
+  const leftCol = useRef(null);
+  const rightCol = useRef(null);
 
   useEffect(() => {
-    // সেফটি চেক: যদি কোনো একটা রেফ-ও null থাকে, তবে অ্যানিমেশন রান করবে না
     if (!mainSec.current || !leftCol.current || !rightCol.current) return;
 
-    // GSAP Context তৈরি করা হলো যাতে ক্লিনআপ করা সহজ হয়
     let ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: mainSec.current,
@@ -49,8 +47,9 @@ export default function Page() {
       });
     });
 
-    // ক্লিনআপ ফাংশন: কম্পোনেন্ট আনমাউন্ট হলে স্ক্রলট্রিগার রিলিজ করে দেবে
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -188,7 +187,11 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="h-screen w-full bg-[#1d1d1d]"></div>
+      <div className="h-screen w-full bg-[#1c1c1c] flex justify-center items-center">
+        <span className="text-[#eae9e4] text-5xl">
+          Amazing Right? 😎 Scroll Up to See Again
+        </span>
+      </div>
     </main>
   );
 }

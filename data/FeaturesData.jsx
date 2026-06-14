@@ -17,10 +17,10 @@ export const featuresData = [
   },
   {
     id: 3,
-    title: "Light Switch",
+    title: "Scroll Zoom",
     description:
       "A light switch is a device used to control the flow of electricity to a light fixture.",
-    imageSrc: "/light-switch.png",
-    linkHref: "/light-switch",
+    imageSrc: "/features-images/scroll-zoom.png",
+    linkHref: "/scroll-zoom",
   },
 ];
